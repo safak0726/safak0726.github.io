@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<link rel="stylesheet" href="main.css">
+
+    <title>Mst Forum-Soru Cevap Portalı</title>
+
+  </head>
+  <body>
+    <section>
+        <div class="container" style="margin-top:50px;">
+    <div class="row">
+      <div class="col-md-4">
+        <h1>Sorunuz :</h1>
+        <label>Kullanıcı Adınız</label>
+        <input type="text" id="txtKullaniciAdi" class="form-control">
+        <label>E-Posta</label>
+        <input type="text" id="txtMail" class="form-control">
+        <label>Kategori</label>
+        <select class="form-control" id="txtKategori">
+  <option>Donanım</option>
+  <option>Yazılım</option>
+  <option>Mobil Teknolojiler</option>
+  <option>Ev elektroniği</option>
+  <option>Bilim ve Teknoloji</option>
+  <option>İnternet</option>
+</select>
+        <label>Sorunuz</label>
+        <input type="text" id="soru" class="form-control">
+        <label>Açıklamanız</label>
+        <textarea class="form-control" rows="4" id="aciklama"></textarea>
+        <br>
+        <button id="btnKaydet" class="btn btn-primary">Sor</button>
+        <hr>
+        <div id="sonuc"></div>
+
+      </div>
+      <div class="col-md-8">
+        <h1>Sorulan Sorular</h1>
+        <table class="table table-hover" id="tbKayitlar">
+          <tr class="bg-info">
+
+            <td>Kullanıcı Adınız</td>
+            <td>E-Posta</td>
+            <td>Kategori</td>
+            <td>Sorunuz</td>
+            <td>İşlemler</td>
+          </tr>
+          <tr>
+
+            <td>safak0726</td>
+            <td>mustafasafak0726@gmail.com</td>
+            <td>Yazılım</td>
+            <td>Bootstrap Nasıl Kurulur?</td>
+            <td>
+              <button class="btn btn-danger sil">Sil</button>
+            </td>
+          </tr>
+        
+        </table>
+      </div>
+    </div>
+  </div>
+    </section>
+    <section class="container">
+  <section class="row clearfix">
+    <section class="col-md-12 column">
+          
+          <nav class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">MSTech Soru Cevap Portalı</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cog"></i> Ayarlar <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#"><i class="fa fa-send"></i> Email this page</a></li>
+            <li><a href="#"><i class="fa fa-print"></i> Print this page</a></li>
+            <li><a href="#"><i class="fa fa-download"></i> Download pdf of this page</a></li>
+            <li class="divider"></li>
+            <li><a href="#"><i class="fa fa-smile-o"></i> Subscript me in this post</a></li>
+            <li class="divider"></li>
+            <li><a href="#"><i class="fa fa-cogs"></i> Manage this post(for adminstrator)</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input class="form-control" placeholder="Search in this post..." type="text">
+        </div>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><i class="fa fa-heart"> </i>Toplam 1 Soru</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-share"></i>PAYLAŞ <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#"><i class="fa fa-facebook"></i> facebook</a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i> twitter</a></li>
+            <li><a href="#"><i class="fa fa-google-plus"></i> google pluse</a></li>
+            <li class="divider"></li>
+            <li><a href="#"><i class="fa fa-cogs"></i> KONUYU YÖNET(for adminstrator)</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+          
+          <div class="row clearfix">
+    <div class="col-md-12 column">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <section class="panel-title">
+                      <time class="pull-right">
+                      <i class="fa fa-calendar"></i> 2014-09-15 , <i class="fa fa-clock-o"></i> 1:35 pm
+                      </time>
+                      <section class="pull-left" id="id">
+                        <abbr title="count of posts in this topic"></abbr>
+                      </section>
+          </section>
+        </div>
+        <section class="row panel-body">
+          <section class="col-md-9">
+                      <h2> <i class="fa fa-smile-o"></i> Whats the name of the element of this website?</h2>
+                      <hr>
+                      Hi, I'm wondering whats the name of the element that appaers in this website: Startupbus
+
+            Im talking about the images that remain static in the back and change everytime a new section is reached.
+    
+                        Is there a framework that does this?
+
+            Thank you for helping 
+                  </section>
+                  
+                  <section id="user-description" class="col-md-3 ">
+                      <section class="well">
+                    <div class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cricle"></i>Mustafa Şafak Tuncer<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#"><i class="fa fa-user"></i> Profilini Ziyaret Edin</a></li>
+                      <li><a href="#"><i class="fa fa-envelope"></i> Mesaj Gönder</a></li>
+                  
+                    </ul>
+             </div>
+                          <figure>
+                            <img class="img-rounded img-responsive" src="http://www.webdesignforums.net/img/wdf_avatar.jpg" alt="Mohammad Sharifi's avatar">
+                            <figcaption class="text-center">Admin <br></i> </figcaption>
+                          </figure>
+                          <dl class="dl-horizontal">
+                            <dt>Giriş Tarihi</dt>
+                            <dd>15 Kasım 2017</dd>
+                            <dt>Post Sayısı</dt>
+                            <dd>785</dd>
+                            <dt>Like sayısı</dt>
+                            <dd>+89</dd>
+                            
+            </dl>
+                      </section>
+                  </section>
+                  
+        </section>
+        <div class="panel-footer">
+                  <div class="row">
+          <section class="col-md-2 ">
+                      <i class="fa fa-thumbs-up "></i><a href="#"> Thanks </a>| <i class="fa fa-warning "></i><a href="#"> Report </a>
+                    </section>
+                    <section id="thanks" class="col-md-6">
+                      <small><a href="#" data-toggle="tooltip" title="You and david,ehsan,john doe">  who L<i class="fa fa-heart "></i>ve this!</a> </small><br>
+                      
+                   </section>
+                    <section class="col-md-4">
+                      <span class="fa-stack">
+                          <i class="fa fa-quote-right fa-stack-1x"></i>
+                          <i class="fa fa-comment-o fa-lg fa-stack-1x"></i>
+            </span><a href="#"> Reply With Quote </a> |
+                      <i class="fa fa-mail-reply "></i><a href="#"> Reply </a>|
+                      <i class="fa fa-edit "></i><a href="#"> Edit Post </a>
+                    </section>
+        </div>
+               </div>
+      </div>
+    </div>
+  </div>
+          
+          
+          
+    </section>
+  </section>
+</section>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+   
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+  $("[data-toggle=tooltip]").tooltip();
+   $(function () {
+      $("#btnKaydet").click(function () {
+        var kullaniciAdi = $("#txtKullaniciAdi").val();
+        var mail = $("#txtMail").val();
+        var Kategori = $("#txtKategori").val();
+        var soru = $("#soru").val();
+        var aciklama = $("#aciklama").val();
+        if (kullaniciAdi == "" || mail == "" || Kategori == "" || soru == "" || aciklama == "") {
+          $("#sonuc").fadeIn(1000);
+          $("#sonuc").html("Lütfen Tüm Alanları Doldurunuz!");
+          $("#sonuc").removeClass();
+          $("#sonuc").addClass("alert alert-danger");
+          $("#sonuc").fadeOut(3000);
+          return false;
+        }
+        $("#tbKayitlar").append("<tr><td>" + kullaniciAdi + "</td><td>" + mail + "</td><td>" + Kategori + "</td><td>" + soru + "</td><td><button class='btn btn-danger sil'>Sil</button></td></tr>");
+      });
+      $(document).on("click", ".sil", function () {
+        var satir = $(this).closest("tr");
+        satir.remove();
+      });
+    });
+
+</script>
+  </body>
+</html>
